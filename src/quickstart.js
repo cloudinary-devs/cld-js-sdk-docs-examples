@@ -1,7 +1,7 @@
 import {Cloudinary} from "@cloudinary/url-gen";
 import {fill} from "@cloudinary/url-gen/actions/resize";
 
-export default function quickstart() {
+export default function getQuickstartImage() {
 
     const cld = new Cloudinary({
         cloud: {

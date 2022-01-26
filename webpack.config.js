@@ -4,11 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   mode: 'production',
   entry: {
-    index: {
-        import: './src/index.js',
-        dependOn: 'shared',
-      },
-      shared: 'lodash',
+    index: './src/index.js',
   },
   plugins: [
     new HtmlWebpackPlugin({
