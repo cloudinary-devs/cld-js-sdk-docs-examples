@@ -1,6 +1,17 @@
 import './style.css';
 import getQuickstartImage from './quickstart.js';
 import getFullExampleImage from './fullExample.js';
+import getTransformationsImage from './transformations.js';
+import getAssetInstanceImage from './assetInstance.js';
+import getSyntaxOverviewImage from './syntaxOverview.js';
+import getFetchImage from './deliveryType.js';
+import getTransformingYourImageImage from './transformingYourImage.js';
+import getChainingTransformationsImage from './chainingTransformations.js';
+import getResizingAndCroppingImage from './resizingAndCropping.js';
+import getConvertingFormatExtensionImage from './convertingFormatExtension.js';
+import getConvertingFormatDeliveryImage from './convertingFormatDelivery.js';
+import getAutoFormatImage from './autoFormat';
+import getEffectsImage from './effects';
 
 async function getComponent(index) {
 
@@ -26,6 +37,94 @@ async function getComponent(index) {
             link = "https://cloudinary.com/documentation/javascript_integration#full_example";
             linkText = "Full example";
             myImageUrl = getFullExampleImage().toURL();
+            break;
+        }
+        case 3:
+        {
+            description = "Apply a thumbnail crop with rounded corners, as shown in";
+            link = "https://cloudinary.com/documentation/javascript_image_transformations#image_transformations_with_javascript";
+            linkText = "Image transformations with JavaScript";
+            myImageUrl = getTransformationsImage().toURL();
+            break;
+        }
+        case 4:
+        {
+            description = "Specify the Cloudinary configuration when instantiating an asset, as shown in";
+            link = "https://cloudinary.com/documentation/javascript_integration#asset_instance_configuration";
+            linkText = "Asset instance configuration";
+            myImageUrl = getAssetInstanceImage().toURL();
+            break;
+        }
+        case 5:
+        {
+            description = "Replace the most prominent color with light blue, as shown in";
+            link = "https://cloudinary.com/documentation/javascript_image_transformations#syntax_overview";
+            linkText = "Syntax overview";
+            myImageUrl = getSyntaxOverviewImage().toURL();
+            break;
+        }
+        case 6:
+        {
+            description = "Use the fetch delivery type to deliver an image, as shown in";
+            link = "https://cloudinary.com/documentation/javascript_image_transformations#specifying_the_delivery_type";
+            linkText = "Specifying the delivery type";
+            myImageUrl = getFetchImage().toURL();
+            break;
+        }
+        case 7:
+        {
+            description = "Scale an image to a width of 400 pixels, as shown in";
+            link = "https://cloudinary.com/documentation/javascript_image_transformations#transforming_your_image";
+            linkText = "Transforming your image";
+            myImageUrl = getTransformingYourImageImage().toURL();
+            break;
+        }
+        case 8:
+        {
+            description = "Chain several transformations together, as shown in";
+            link = "https://cloudinary.com/documentation/javascript_image_transformations#chaining_transformations";
+            linkText = "Chaining transformations";
+            myImageUrl = getChainingTransformationsImage().toURL();
+            break;
+        }
+        case 9:
+        {
+            description = "Crop an image to keep the faces, as shown in";
+            link = "https://cloudinary.com/documentation/javascript_image_transformations#resizing_and_cropping";
+            linkText = "Resizing and cropping";
+            myImageUrl = getResizingAndCroppingImage().toURL();
+            break;
+        }
+        case 10:
+        {
+            description = "Deliver a .jpg file in .gif format by changing the extension, as shown in";
+            link = "https://cloudinary.com/documentation/javascript_image_transformations#converting_format_example1a";
+            linkText = "Converting to another image format";
+            myImageUrl = getConvertingFormatExtensionImage().toURL();
+            break;
+        }
+        case 11:
+        {
+            description = "Deliver a .jpg file in .gif format by setting the delivery format, as shown in";
+            link = "https://cloudinary.com/documentation/javascript_image_transformations#converting_format_example1b";
+            linkText = "Converting to another image format";
+            myImageUrl = getConvertingFormatDeliveryImage().toURL();
+            break;
+        }
+        case 12:
+        {
+            description = "Use auto format to deliver a file in the best format for the end device, as shown in";
+            link = "https://cloudinary.com/documentation/javascript_image_transformations#converting_format_example2";
+            linkText = "Converting to another image format";
+            myImageUrl = getAutoFormatImage().toURL();
+            break;
+        }
+        case 13:
+        {
+            description = "Apply various transformations, as shown in";
+            link = "https://cloudinary.com/documentation/javascript_image_transformations#applying_image_effects_and_filters";
+            linkText = "Applying image effects and filters";
+            myImageUrl = getEffectsImage().toURL();
             break;
         }
         default:
@@ -68,7 +167,8 @@ async function getComponent(index) {
     return element;
   }
   
-  for (let i=1; i<3; i++)
+  // Loop through all the different images, adding them to the page
+  for (let i=1; i<14; i++)
   {
     getComponent(i).then((component) => {
         document.body.appendChild(component);

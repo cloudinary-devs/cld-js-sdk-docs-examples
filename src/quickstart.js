@@ -3,15 +3,18 @@ import {fill} from "@cloudinary/url-gen/actions/resize";
 
 export default function getQuickstartImage() {
 
-    const cld = new Cloudinary({
-        cloud: {
-            cloudName: 'demo'
-        }
-    });
+  // Create a Cloudinary instance and set your cloud name.
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName: 'demo'
+    }
+  });
 
-    const myImage = cld.image('docs/models'); 
+  // Instantiate a CloudinaryImage object for the image with the public ID, 'docs/models'.
+  const myImage = cld.image('docs/models'); 
 
-    myImage.resize(fill().width(250).height(250));
+  // Resize to 250 x 250 pixels using the 'fill' crop mode.
+  myImage.resize(fill().width(250).height(250));
 
-    return myImage;
+  return myImage;
 }
