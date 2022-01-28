@@ -10,8 +10,10 @@ import getChainingTransformationsImage from './chainingTransformations.js';
 import getResizingAndCroppingImage from './resizingAndCropping.js';
 import getConvertingFormatExtensionImage from './convertingFormatExtension.js';
 import getConvertingFormatDeliveryImage from './convertingFormatDelivery.js';
-import getAutoFormatImage from './autoFormat';
-import getEffectsImage from './effects';
+import getAutoFormatImage from './autoFormat.js';
+import getEffectsImage from './effects.js';
+import getOverlaysImage from './overlays.js';
+import getOptimizationsImage from './imageOptimizations.js';
 
 async function getComponent(index) {
 
@@ -127,18 +129,36 @@ async function getComponent(index) {
             myImageUrl = getEffectsImage().toURL();
             break;
         }
+        case 14:
+        {
+            description = "Add text and image overlays to an image, as shown in";
+            link = "https://cloudinary.com/documentation/javascript_image_transformations#adding_text_and_image_overlays";
+            linkText = "Adding text and image overlays";
+            myImageUrl = getOverlaysImage().toURL();
+            break;
+        }
+        case 15:
+        {
+            description = "Apply automatic format and quality, as shown in";
+            link = "https://cloudinary.com/documentation/javascript_image_transformations#image_optimizations";
+            linkText = "Image optimizations";
+            myImageUrl = getOptimizationsImage().toURL();
+            break;
+        }
         default:
         {
             console.log("Oops! Outside of range.");
         }
     }
 
+    // Create the elements
     const element = document.createElement('div');
     const spacing = document.createElement('div');
     const spacing2 = document.createElement('div');
     const anchor = document.createElement('a');
     const imgElement = document.createElement('img');
 
+    // Set the styles
     element.classList.add('text','App');
     spacing.classList.add('space');
     spacing2.classList.add('space');
@@ -147,10 +167,10 @@ async function getComponent(index) {
     element.innerHTML = description;
 
     // Define the link
-    anchor.setAttribute("href", link);
+    anchor.href = link;
     anchor.classList.add('App-link');
-    anchor.setAttribute("target", "_blank");
-    anchor.setAttribute("rel", "noopener noreferrer");
+    anchor.target = "_blank";
+    anchor.rel = "noopener noreferrer";
     anchor.innerHTML = linkText;
 
     // Add the link and some space to the div
@@ -168,7 +188,7 @@ async function getComponent(index) {
   }
   
   // Loop through all the different images, adding them to the page
-  for (let i=1; i<14; i++)
+  for (let i=1; i<16; i++)
   {
     getComponent(i).then((component) => {
         document.body.appendChild(component);
