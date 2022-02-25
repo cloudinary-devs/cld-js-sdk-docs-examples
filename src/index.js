@@ -1,19 +1,19 @@
 import './style.css';
-import getQuickstartImage from './quickstart.js';
-import getFullExampleImage from './fullExample.js';
-import getTransformationsImage from './transformations.js';
-import getAssetInstanceImage from './assetInstance.js';
-import getSyntaxOverviewImage from './syntaxOverview.js';
-import getFetchImage from './deliveryType.js';
-import getTransformingYourImageImage from './transformingYourImage.js';
-import getChainingTransformationsImage from './chainingTransformations.js';
-import getResizingAndCroppingImage from './resizingAndCropping.js';
-import getConvertingFormatExtensionImage from './convertingFormatExtension.js';
-import getConvertingFormatDeliveryImage from './convertingFormatDelivery.js';
-import getAutoFormatImage from './autoFormat.js';
-import getEffectsImage from './effects.js';
-import getOverlaysImage from './overlays.js';
-import getOptimizationsImage from './imageOptimizations.js';
+import getQuickstartImage from './quickstart';
+import getFullExampleImage from './fullExample';
+import getTransformationsImage from './transformations';
+import getAssetInstanceImage from './assetInstance';
+import getSyntaxOverviewImage from './syntaxOverview';
+import getFetchImage from './deliveryType';
+import getTransformingYourImageImage from './transformingYourImage';
+import getChainingTransformationsImage from './chainingTransformations';
+import getResizingAndCroppingImage from './resizingAndCropping';
+import getConvertingFormatExtensionImage from './convertingFormatExtension';
+import getConvertingFormatDeliveryImage from './convertingFormatDelivery';
+import getAutoFormatImage from './autoFormat';
+import getEffectsImage from './effects';
+import getOverlaysImage from './overlays';
+import getOptimizationsImage from './imageOptimizations';
 
 async function getComponent(index) {
 
@@ -155,6 +155,7 @@ async function getComponent(index) {
     const element = document.createElement('div');
     const spacing = document.createElement('div');
     const spacing2 = document.createElement('div');
+    const spacing3 = document.createElement('div');
     const anchor = document.createElement('a');
     const imgElement = document.createElement('img');
 
@@ -162,6 +163,7 @@ async function getComponent(index) {
     element.classList.add('text','App');
     spacing.classList.add('space');
     spacing2.classList.add('space');
+    spacing3.classList.add('space');
 
     // Add the description
     element.innerHTML = description;
@@ -183,6 +185,16 @@ async function getComponent(index) {
     // Add the image and some space to the div
     element.appendChild(imgElement);
     element.appendChild(spacing2);
+
+    if (index == 15)
+    {
+        let endDiv = document.createElement('div');
+        endDiv.innerHTML = "Go to <a href=\"videos.html\">video transformations...</a>";
+        
+        element.appendChild(endDiv);
+
+        element.appendChild(spacing3);
+    }
          
     return element;
   }
