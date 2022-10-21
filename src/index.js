@@ -28,7 +28,7 @@ async function getComponent(index) {
         case 1:
         {
             description = "Crop an image to a square, as shown in the";
-            link = "https://cloudinary.com/documentation/javascript_quick_start#2_add_cloudinary_to_your_code";
+            link = "https://cloudinary.com/documentation/javascript_quick_start";
             linkText = "Quick start guide";
             myImageUrl = getQuickstartImage().toURL();
             break;
