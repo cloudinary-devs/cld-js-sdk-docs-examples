@@ -8,6 +8,7 @@ import getFetchImage from './deliveryType';
 import getTransformingYourImageImage from './transformingYourImage';
 import getChainingTransformationsImage from './chainingTransformations';
 import getResizingAndCroppingImage from './resizingAndCropping';
+import getAutoGravityImage from './autoGravity';
 import getConvertingFormatExtensionImage from './convertingFormatExtension';
 import getConvertingFormatDeliveryImage from './convertingFormatDelivery';
 import getAutoFormatImage from './autoFormat';
@@ -97,7 +98,17 @@ async function getComponent(index) {
             myImageUrl = getResizingAndCroppingImage().toURL();
             break;
         }
-        case 10:
+        case 10: 
+        {
+            description =
+              "Crop an image to keep the most interesting part, as shown in";
+            link =
+              "https://cloudinary.com/documentation/javascript_image_transformations#resizing_and_cropping";
+            linkText = "Resizing and cropping";
+            myImageUrl = getAutoGravityImage().toURL();
+            break;
+        }
+        case 11:
         {
             description = "Deliver a .jpg file in .gif format by changing the extension, as shown in";
             link = "https://cloudinary.com/documentation/javascript_image_transformations#converting_format_example1a";
@@ -105,7 +116,7 @@ async function getComponent(index) {
             myImageUrl = getConvertingFormatExtensionImage().toURL();
             break;
         }
-        case 11:
+        case 12:
         {
             description = "Deliver a .jpg file in .gif format by setting the delivery format, as shown in";
             link = "https://cloudinary.com/documentation/javascript_image_transformations#converting_format_example1b";
@@ -113,7 +124,7 @@ async function getComponent(index) {
             myImageUrl = getConvertingFormatDeliveryImage().toURL();
             break;
         }
-        case 12:
+        case 13:
         {
             description = "Use auto format to deliver a file in the best format for the end device, as shown in";
             link = "https://cloudinary.com/documentation/javascript_image_transformations#converting_format_example2";
@@ -121,7 +132,7 @@ async function getComponent(index) {
             myImageUrl = getAutoFormatImage().toURL();
             break;
         }
-        case 13:
+        case 14:
         {
             description = "Apply various transformations, as shown in";
             link = "https://cloudinary.com/documentation/javascript_image_transformations#applying_image_effects_and_filters";
@@ -129,7 +140,7 @@ async function getComponent(index) {
             myImageUrl = getEffectsImage().toURL();
             break;
         }
-        case 14:
+        case 15:
         {
             description = "Add text and image overlays to an image, as shown in";
             link = "https://cloudinary.com/documentation/javascript_image_transformations#adding_text_and_image_overlays";
@@ -137,7 +148,7 @@ async function getComponent(index) {
             myImageUrl = getOverlaysImage().toURL();
             break;
         }
-        case 15:
+        case 16:
         {
             description = "Apply automatic format and quality, as shown in";
             link = "https://cloudinary.com/documentation/javascript_image_transformations#image_optimizations";
@@ -186,7 +197,7 @@ async function getComponent(index) {
     element.appendChild(imgElement);
     element.appendChild(spacing2);
 
-    if (index == 15)
+    if (index == 16)
     {
         let endDiv = document.createElement('div');
         endDiv.innerHTML = "Go to <a href=\"videos.html\">video transformations...</a>";
@@ -200,7 +211,7 @@ async function getComponent(index) {
   }
   
   // Loop through all the different images, adding them to the page
-  for (let i=1; i<16; i++)
+  for (let i=1; i<17; i++)
   {
     getComponent(i).then((component) => {
         document.body.appendChild(component);
