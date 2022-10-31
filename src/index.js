@@ -197,7 +197,7 @@ async function getComponent(index) {
     element.appendChild(imgElement);
     element.appendChild(spacing2);
 
-    if (index == 16)
+    if (index === 16)
     {
         let endDiv = document.createElement('div');
         endDiv.innerHTML = "Go to <a href=\"videos.html\">video transformations...</a>";
