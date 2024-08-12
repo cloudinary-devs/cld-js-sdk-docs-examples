@@ -13,15 +13,15 @@ export default function getExample1Video() {
   // Create a Cloudinary instance and set your cloud name.
   const cld = new Cloudinary({
     cloud: {
-      cloudName: 'demo'
+      cloudName: 'dl2iiiyzj'
     },
     url: {
       analytics: false
     }
   });
 
-// Use the video with public ID, 'elephants'.
-const myVideo = cld.video('elephants');
+// Use the video with public ID, 'Recording-2024-06-26-234448_hp7gen_cukmqs'.
+const myVideo = cld.video('Recording-2024-06-26-234448_hp7gen_cukmqs');
 
 // Apply the transformation.
 myVideo
